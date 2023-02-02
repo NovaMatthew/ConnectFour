@@ -13,6 +13,8 @@ Select a move:
 Enter a number from 0 to 35.
 
 User location will be displayed with "R"
+
+
 Computer "B"
 
 ## Example 
