@@ -10,3 +10,28 @@ You'll be prompted to
 Select a move:
 ```
 
+Enter a number from 0 to 35.
+
+User location will be displayed with "R"
+Computer "B"
+
+## Example 
+```Kotlin
+Select a move:
+0
+```
+ R |   |   |   |   |   
+------------------------
+   |   |   |   |   |   
+------------------------
+   | B |   |   |   |   
+------------------------
+   |   |   |   |   |   
+------------------------
+   |   |   |   |   |   
+------------------------
+   |   |   |   |   |   
+
+### Environment Requirements
+The user must have minimum Kotlin 1.5.31 required.
+
