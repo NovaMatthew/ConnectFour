@@ -16,21 +16,8 @@ User location will be displayed with "R"
 Computer "B"
 
 ## Example 
-```Kotlin
-Select a move:
-0
-```
- R |   |   |   |   |   
-------------------------
-   |   |   |   |   |   
-------------------------
-   | B |   |   |   |   
-------------------------
-   |   |   |   |   |   
-------------------------
-   |   |   |   |   |   
-------------------------
-   |   |   |   |   |   
+<img width="228" alt="Screen Shot 2023-02-02 at 6 08 34 PM" src="https://user-images.githubusercontent.com/98360625/216471779-11d2ce29-6a17-4dd9-b893-e514370901d8.png">
+
 
 ### Environment Requirements
 The user must have minimum Kotlin 1.5.31 required.
