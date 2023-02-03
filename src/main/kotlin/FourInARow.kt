@@ -122,49 +122,36 @@ class FourInARow
             }
         }
 
-        redCount = 0
-        blueCount = 0
 
-        // checks Diagonal win right ----> left && left ---> right
-        for (row in 0 until GameConstants.ROWS) {
-            for (col in 0 until GameConstants.COLS) {
-                // checks red Diagonal win right ----> left
-                if (board[row][col] == GameConstants.RED && row == col) {
-                    redCount++
-                    blueCount = 0
+        /** Citation
+         * - Shaun Halverson
+         * https://www.youtube.com/watch?v=i_4ZWjmybWs
+         * Referenced Shaun's Diagonal check algorithm
+         */
 
-                    if (redCount >= 4) {
-                        return RED_WON
-                    }
-
-                    // checks blue diagonal win left ----> right
-                } else if (board[row][col] == GameConstants.BLUE && row + col == GameConstants.ROWS - 1) {
-                    blueCount++
-                    redCount = 0
-                    if (blueCount >= 4) {
-                        return BLUE_WON
-                    }
-
-                    // checks blue Diagonal win right ----> left
-                } else if (board[row][col] == GameConstants.BLUE && row == col) {
-                    blueCount++
-                    redCount = 0
-                    if (blueCount >= 4) {
-                        // println("Diagonal RL$row$col")
-                        return BLUE_WON
-
-                    }
-                    // checks red diagonal win left ----> right
-                } else if (board[row][col] == GameConstants.RED && row + col == GameConstants.ROWS - 1) {
-                    redCount++
-                    blueCount = 0
-                    if (redCount >= 4) {
-                        // println("Diagonal LR$row$col")
-                        return RED_WON
-                    }
+        // checks Diagonal win left ---> right
+        for (row in 0 until GameConstants.ROWS - 3) {
+            for (col in 0 until GameConstants.COLS - 3) {
+                if (board[row][col] == GameConstants.RED && board[row + 1][col + 1] == GameConstants.RED && board[row + 2][col + 2] == GameConstants.RED && board[row + 3][col + 3] == GameConstants.RED) {
+                    return RED_WON
+                } else if (board[row][col] == GameConstants.BLUE && board[row + 1][col + 1] == GameConstants.BLUE && board[row + 2][col + 2] == GameConstants.BLUE && board[row + 3][col + 3] == GameConstants.BLUE) {
+                    return BLUE_WON
                 }
             }
         }
+
+        // checks Diagonal win right ---> left
+        for (row in 0 until GameConstants.ROWS - 3) {
+            for (col in 3 until GameConstants.COLS) {
+                if (board[row][col] == GameConstants.RED && board[row + 1][col - 1] == GameConstants.RED && board[row + 2][col - 2] == GameConstants.RED && board[row + 3][col - 3] == GameConstants.RED) {
+                    return RED_WON
+                } else if (board[row][col] == GameConstants.BLUE && board[row + 1][col - 1] == GameConstants.BLUE && board[row + 2][col - 2] == GameConstants.BLUE && board[row + 3][col - 3] == GameConstants.BLUE) {
+                    return BLUE_WON
+                }
+            }
+        }
+
+
         // checks tie
         for (row in 0 until GameConstants.ROWS) {
             for (col in 0 until GameConstants.COLS) {
@@ -213,4 +200,3 @@ class FourInARow
         }
     }
 }
-
