@@ -1,6 +1,6 @@
 # ConnectFour
 ## What is this 
-This is a console program for a connect four game. This will eventually become the backend for a mobile application version. 
+This is a console program for a connect four game that will eventually become the backend for a mobile application version. 
 
 ## How to run 
 Clone this project, open in your IDE of choice, then run project from main file.
